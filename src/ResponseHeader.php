@@ -58,6 +58,16 @@ final class ResponseHeader {
 	}
 
 	/**
+	 * Adds the header with the specified name and value
+	 *
+	 * @param string $name the name of the header
+	 * @param string $value the corresponding value for the header
+	 */
+	public static function add($name, $value) {
+		header($name.': '.$value, false);
+	}
+
+	/**
 	 * Removes the header with the specified name (and optional value prefix)
 	 *
 	 * @param string $name the name of the header

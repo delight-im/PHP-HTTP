@@ -35,10 +35,16 @@ Hypertext Transfer Protocol (HTTP) utilities for PHP
    \Delight\Http\ResponseHeader::get('Content-type', 'text/')
    ```
 
- * Setting a header
+ * Setting a header (overwriting other headers with the same name)
 
    ```php
    \Delight\Http\ResponseHeader::set('X-Frame-Options', 'SAMEORIGIN')
+   ```
+
+ * Adding a header (preserving other headers with the same name)
+
+   ```php
+   \Delight\Http\ResponseHeader::add('X-Frame-Options', 'SAMEORIGIN')
    ```
 
  * Removing a header (with optional value prefix)
