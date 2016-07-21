@@ -7,7 +7,7 @@
 	"type": "library",
 	"keywords": [ "http", "https", "headers" ],
 	"homepage": "https://github.com/delight-im/PHP-HTTP",
-	"license": "Apache-2.0",
+	"license": "MIT",
 	"autoload": {
 		"psr-4": {
 			"Delight\\Http\\": "src/"
