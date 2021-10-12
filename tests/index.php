@@ -182,4 +182,23 @@ function fail($lineNumber) {
 (\Delight\Http\ResponseHeader::get('X-Dbf97c884f247135', '8c') !== null) or \fail(__LINE__);
 \Delight\Http\ResponseHeader::remove('X-Dbf97c884f247135');
 
+\header('X-Ca7e51a515534d0d:422b93bf8b1b45a7');
+(\Delight\Http\ResponseHeader::take('X-Ca7e51a515534d0d', '42') !== null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('X-Ca7e51a515534d0d') === null) or \fail(__LINE__);
+\header('X-Ca7e51a515534d0d: 422b93bf8b1b45a7');
+(\Delight\Http\ResponseHeader::take('X-Ca7e51a515534d0d', '42') !== null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('X-Ca7e51a515534d0d') === null) or \fail(__LINE__);
+\header('X-Ca7e51a515534d0d:  422b93bf8b1b45a7');
+(\Delight\Http\ResponseHeader::take('X-Ca7e51a515534d0d', '42') !== null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('X-Ca7e51a515534d0d') === null) or \fail(__LINE__);
+\header('X-Ca7e51a515534d0d:	422b93bf8b1b45a7');
+(\Delight\Http\ResponseHeader::take('X-Ca7e51a515534d0d', '42') !== null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('X-Ca7e51a515534d0d') === null) or \fail(__LINE__);
+\header('X-Ca7e51a515534d0d:		422b93bf8b1b45a7');
+(\Delight\Http\ResponseHeader::take('X-Ca7e51a515534d0d', '42') !== null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('X-Ca7e51a515534d0d') === null) or \fail(__LINE__);
+\header('X-Ca7e51a515534d0d:	 422b93bf8b1b45a7');
+(\Delight\Http\ResponseHeader::take('X-Ca7e51a515534d0d', '42') !== null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('X-Ca7e51a515534d0d') === null) or \fail(__LINE__);
+
 echo 'ALL TESTS PASSED' . "\n";
