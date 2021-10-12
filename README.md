@@ -27,15 +27,15 @@ Hypertext Transfer Protocol (HTTP) utilities for PHP
  * Retrieving a header (with optional value prefix)
 
    ```php
-   \Delight\Http\ResponseHeader::get('Content-type')
+   \Delight\Http\ResponseHeader::get('Content-Type')
    // or
-   \Delight\Http\ResponseHeader::get('Content-type', 'text/')
+   \Delight\Http\ResponseHeader::get('Content-Type', 'text/')
    ```
 
  * Setting a header (overwriting other headers with the same name)
 
    ```php
-   \Delight\Http\ResponseHeader::set('X-Frame-Options', 'SAMEORIGIN')
+   \Delight\Http\ResponseHeader::set('X-Frame-Options', 'sameorigin')
    ```
 
  * Adding a header (preserving other headers with the same name)

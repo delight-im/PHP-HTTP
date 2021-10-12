@@ -10,7 +10,7 @@
 \error_reporting(\E_ALL);
 \ini_set('display_errors', 'stdout');
 
-\header('Content-type: text/plain; charset=utf-8');
+\header('Content-Type: text/plain; charset=utf-8');
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -23,9 +23,9 @@ function fail($lineNumber) {
 
 \Delight\Http\ResponseHeader::set('X-Dd75c0cffe64df82', '535ab646c2f8451a');
 (\Delight\Http\ResponseHeader::get('X-Dd75c0cffe64df82') === 'X-Dd75c0cffe64df82: 535ab646c2f8451a') or \fail(__LINE__);
-(\Delight\Http\ResponseHeader::get('Content-type') === 'Content-type: text/plain; charset=utf-8') or \fail(__LINE__);
-(\Delight\Http\ResponseHeader::get('Content-type', 'text/p') === 'Content-type: text/plain; charset=utf-8') or \fail(__LINE__);
-(\Delight\Http\ResponseHeader::get('Content-type', 'text/h') === null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('Content-Type') === 'Content-Type: text/plain; charset=utf-8') or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('Content-Type', 'text/p') === 'Content-Type: text/plain; charset=utf-8') or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('Content-Type', 'text/h') === null) or \fail(__LINE__);
 
 \Delight\Http\ResponseHeader::remove('X-Dd75c0cffe64df82', 'z');
 (\Delight\Http\ResponseHeader::get('X-Dd75c0cffe64df82') === 'X-Dd75c0cffe64df82: 535ab646c2f8451a') or \fail(__LINE__);
