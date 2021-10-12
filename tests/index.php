@@ -19,6 +19,9 @@ header('Content-type: text/plain; charset=utf-8');
 
 require __DIR__.'/../vendor/autoload.php';
 
+// start output buffering
+\ob_start();
+
 \Delight\Http\ResponseHeader::set('X-Dd75c0cffe64df82', '535ab646c2f8451a');
 assert(\Delight\Http\ResponseHeader::get('X-Dd75c0cffe64df82') === 'X-Dd75c0cffe64df82: 535ab646c2f8451a') or exit;
 assert(\Delight\Http\ResponseHeader::get('Content-type') === 'Content-type: text/plain; charset=utf-8') or exit;
