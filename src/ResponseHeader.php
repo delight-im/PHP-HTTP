@@ -29,7 +29,7 @@ final class ResponseHeader {
 		$headers = \headers_list();
 
 		foreach ($headers as $header) {
-			if (\substr($header, 0, $nameLength) === $name) {
+			if (\strcasecmp(\substr($header, 0, $nameLength), $name) === 0) {
 				if (empty($valuePrefix) || \substr($header, $nameLength + 2, \strlen($valuePrefix)) === $valuePrefix) {
 					return $header;
 				}
