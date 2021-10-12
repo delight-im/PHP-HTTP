@@ -103,6 +103,8 @@ function fail($lineNumber) {
 (\Delight\Http\ResponseHeader::get('X-B0b8ed49addae9a7', '817cD') === 'X-B0b8ed49addae9a7: 817cD2c2cb94bbdd') or \fail(__LINE__);
 (\Delight\Http\ResponseHeader::get('X-B0b8ed49addae9a7', '817CD') === null) or \fail(__LINE__);
 (\Delight\Http\ResponseHeader::get('X-B0b8ed49addae9a7', '817cd') === null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('X-B0b8ed49adda') === null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('X-B0b8ed49addae9a7') === 'X-B0b8ed49addae9a7: 817cD2c2cb94bbdd') or \fail(__LINE__);
 \Delight\Http\ResponseHeader::remove('X-B0b8ed49addae9a7');
 
 \Delight\Http\ResponseHeader::set('X-E6f1dda6cd696709', 'cD571abab1cc4b1b');
