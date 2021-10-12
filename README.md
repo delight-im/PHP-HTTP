@@ -41,7 +41,7 @@ Hypertext Transfer Protocol (HTTP) utilities for PHP
  * Adding a header (preserving other headers with the same name)
 
    ```php
-   \Delight\Http\ResponseHeader::add('X-Frame-Options', 'SAMEORIGIN')
+   \Delight\Http\ResponseHeader::add('Vary', 'User-Agent')
    ```
 
  * Removing a header (with optional value prefix)
