@@ -27,37 +27,37 @@ Hypertext Transfer Protocol (HTTP) utilities for PHP
  * Retrieving a header (with optional value prefix)
 
    ```php
-   \Delight\Http\ResponseHeader::get('Content-Type')
+   \Delight\Http\ResponseHeader::get('Content-Type');
    // or
-   \Delight\Http\ResponseHeader::get('Content-Type', 'text/')
+   \Delight\Http\ResponseHeader::get('Content-Type', 'text/');
    ```
 
  * Setting a header (overwriting other headers with the same name)
 
    ```php
-   \Delight\Http\ResponseHeader::set('X-Frame-Options', 'sameorigin')
+   \Delight\Http\ResponseHeader::set('X-Frame-Options', 'sameorigin');
    ```
 
  * Adding a header (preserving other headers with the same name)
 
    ```php
-   \Delight\Http\ResponseHeader::add('Vary', 'User-Agent')
+   \Delight\Http\ResponseHeader::add('Vary', 'User-Agent');
    ```
 
  * Removing a header (with optional value prefix)
 
    ```php
-   \Delight\Http\ResponseHeader::remove('X-Powered-By')
+   \Delight\Http\ResponseHeader::remove('X-Powered-By');
    // or
-   \Delight\Http\ResponseHeader::remove('X-Powered-By', 'PHP')
+   \Delight\Http\ResponseHeader::remove('X-Powered-By', 'PHP');
    ```
 
  * Retrieving and removing a header at once (with optional value prefix)
 
    ```php
-   \Delight\Http\ResponseHeader::take('Set-Cookie')
+   \Delight\Http\ResponseHeader::take('Set-Cookie');
    // or
-   \Delight\Http\ResponseHeader::take('Set-Cookie', 'mysession=')
+   \Delight\Http\ResponseHeader::take('Set-Cookie', 'mysession=');
    ```
 
 ## Contributing
