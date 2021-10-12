@@ -220,4 +220,12 @@ function fail($lineNumber) {
 (\Delight\Http\ResponseHeader::take('X-Ca7e51a515534d0d', '42') !== null) or \fail(__LINE__);
 (\Delight\Http\ResponseHeader::get('X-Ca7e51a515534d0d') === null) or \fail(__LINE__);
 
+\header('X-Cfc0bcd8696f4899:  7a31e8a76126477c ');
+(\Delight\Http\ResponseHeader::get('X-Cfc0bcd8696f4899') !== null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::getValue('X-Cfc0bcd8696f4899') === '7a31e8a76126477c') or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::getValue('X-Cfc0bcd8696f4899', '7a31e') === '7a31e8a76126477c') or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::takeValue('X-Cfc0bcd8696f4899', '7a31e') === '7a31e8a76126477c') or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::getValue('X-Cfc0bcd8696f4899') === null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('X-Cfc0bcd8696f4899') === null) or \fail(__LINE__);
+
 echo 'ALL TESTS PASSED' . "\n";
