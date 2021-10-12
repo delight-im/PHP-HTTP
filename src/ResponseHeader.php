@@ -26,13 +26,11 @@ final class ResponseHeader {
 		}
 
 		$nameLength = strlen($name);
-		$valuePrefixLength = strlen($valuePrefix);
-
 		$headers = headers_list();
 
 		foreach ($headers as $header) {
 			if (substr($header, 0, $nameLength) === $name) {
-				if (substr($header, $nameLength + 2, $valuePrefixLength) === $valuePrefix) {
+				if (empty($valuePrefix) || substr($header, $nameLength + 2, strlen($valuePrefix)) === $valuePrefix) {
 					return $header;
 				}
 			}
