@@ -25,12 +25,12 @@ final class ResponseHeader {
 			return null;
 		}
 
-		$nameLength = strlen($name);
-		$headers = headers_list();
+		$nameLength = \strlen($name);
+		$headers = \headers_list();
 
 		foreach ($headers as $header) {
-			if (substr($header, 0, $nameLength) === $name) {
-				if (empty($valuePrefix) || substr($header, $nameLength + 2, strlen($valuePrefix)) === $valuePrefix) {
+			if (\substr($header, 0, $nameLength) === $name) {
+				if (empty($valuePrefix) || \substr($header, $nameLength + 2, \strlen($valuePrefix)) === $valuePrefix) {
 					return $header;
 				}
 			}
@@ -48,7 +48,7 @@ final class ResponseHeader {
 	 * @param string $value the corresponding value for the header
 	 */
 	public static function set($name, $value) {
-		header($name.': '.$value);
+		\header($name . ': ' . $value);
 	}
 
 	/**
@@ -60,7 +60,7 @@ final class ResponseHeader {
 	 * @param string $value the corresponding value for the header
 	 */
 	public static function add($name, $value) {
-		header($name.': '.$value, false);
+		\header($name . ': ' . $value, false);
 	}
 
 	/**
@@ -71,13 +71,13 @@ final class ResponseHeader {
 	 */
 	public static function remove($name, $valuePrefix = '') {
 		if (empty($valuePrefix)) {
-			header_remove($name);
+			\header_remove($name);
 		}
 		else {
 			$found = self::get($name, $valuePrefix);
 
 			if (isset($found)) {
-				header_remove($name);
+				\header_remove($name);
 			}
 		}
 	}

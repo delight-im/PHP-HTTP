@@ -7,12 +7,12 @@
  */
 
 // enable error reporting
-error_reporting(E_ALL);
-ini_set('display_errors', 'stdout');
+\error_reporting(\E_ALL);
+\ini_set('display_errors', 'stdout');
 
-header('Content-type: text/plain; charset=utf-8');
+\header('Content-type: text/plain; charset=utf-8');
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 function fail($lineNumber) {
 	exit('Error on line ' . $lineNumber);
@@ -30,7 +30,7 @@ function fail($lineNumber) {
 \Delight\Http\ResponseHeader::remove('X-Dd75c0cffe64df82', 'z');
 (\Delight\Http\ResponseHeader::get('X-Dd75c0cffe64df82') === 'X-Dd75c0cffe64df82: 535ab646c2f8451a') or \fail(__LINE__);
 
-\Delight\Http\ResponseHeader::remove('X-Dd75c0cffe64df82', substr('535ab646c2f8451a', 0, 4));
+\Delight\Http\ResponseHeader::remove('X-Dd75c0cffe64df82', \substr('535ab646c2f8451a', 0, 4));
 (\Delight\Http\ResponseHeader::get('X-Dd75c0cffe64df82') === null) or \fail(__LINE__);
 
 \Delight\Http\ResponseHeader::set('X-Ff4d986c9f5de0b9', '846157f7e880442a');
@@ -61,4 +61,4 @@ function fail($lineNumber) {
 (\Delight\Http\ResponseHeader::take('X-Ed429f99cf4df084', '1') === null) or \fail(__LINE__);
 (\Delight\Http\ResponseHeader::get('X-Ed429f99cf4df084') === null) or \fail(__LINE__);
 
-echo 'ALL TESTS PASSED'."\n";
+echo 'ALL TESTS PASSED' . "\n";
