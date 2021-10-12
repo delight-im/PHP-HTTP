@@ -21,6 +21,10 @@ final class ResponseHeader {
 	 * @return string|null the header (if found) or `null`
 	 */
 	public static function get($name, $valuePrefix = '') {
+		if (empty($name)) {
+			return null;
+		}
+
 		$nameLength = strlen($name);
 		$valuePrefixLength = strlen($valuePrefix);
 
