@@ -48,7 +48,7 @@ final class ResponseHeader {
 	 * @param string $value the corresponding value for the header
 	 */
 	public static function set($name, $value) {
-		\header($name . ': ' . $value);
+		\header($name . ': ' . $value, true);
 	}
 
 	/**
