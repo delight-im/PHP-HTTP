@@ -27,9 +27,9 @@ Hypertext Transfer Protocol (HTTP) utilities for PHP
  * Retrieving a header (with optional value prefix)
 
    ```php
-   \Delight\Http\ResponseHeader::get('Content-Type');
+   $header = \Delight\Http\ResponseHeader::get('Content-Type');
    // or
-   \Delight\Http\ResponseHeader::get('Content-Type', 'text/');
+   $header = \Delight\Http\ResponseHeader::get('Content-Type', 'text/');
    ```
 
  * Setting a header (overwriting other headers with the same name)
@@ -47,17 +47,17 @@ Hypertext Transfer Protocol (HTTP) utilities for PHP
  * Removing a header (with optional value prefix)
 
    ```php
-   \Delight\Http\ResponseHeader::remove('X-Powered-By');
+   $success = \Delight\Http\ResponseHeader::remove('X-Powered-By');
    // or
-   \Delight\Http\ResponseHeader::remove('X-Powered-By', 'PHP');
+   $success = \Delight\Http\ResponseHeader::remove('X-Powered-By', 'PHP');
    ```
 
  * Retrieving and removing a header at once (with optional value prefix)
 
    ```php
-   \Delight\Http\ResponseHeader::take('Set-Cookie');
+   $header = \Delight\Http\ResponseHeader::take('Set-Cookie');
    // or
-   \Delight\Http\ResponseHeader::take('Set-Cookie', 'mysession=');
+   $header = \Delight\Http\ResponseHeader::take('Set-Cookie', 'mysession=');
    ```
 
 ## Contributing
