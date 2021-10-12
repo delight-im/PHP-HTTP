@@ -163,4 +163,23 @@ function fail($lineNumber) {
 (\Delight\Http\ResponseHeader::take('X-E6f1dda6cd696709') !== null) or \fail(__LINE__);
 (\Delight\Http\ResponseHeader::get('X-E6f1dda6cd696709') === null) or \fail(__LINE__);
 
+\header('X-Dbf97c884f247135:8c7039d7e753d34d');
+(\Delight\Http\ResponseHeader::get('X-Dbf97c884f247135', '8c') !== null) or \fail(__LINE__);
+\Delight\Http\ResponseHeader::remove('X-Dbf97c884f247135');
+\header('X-Dbf97c884f247135: 8c7039d7e753d34d');
+(\Delight\Http\ResponseHeader::get('X-Dbf97c884f247135', '8c') !== null) or \fail(__LINE__);
+\Delight\Http\ResponseHeader::remove('X-Dbf97c884f247135');
+\header('X-Dbf97c884f247135:  8c7039d7e753d34d');
+(\Delight\Http\ResponseHeader::get('X-Dbf97c884f247135', '8c') !== null) or \fail(__LINE__);
+\Delight\Http\ResponseHeader::remove('X-Dbf97c884f247135');
+\header('X-Dbf97c884f247135:	8c7039d7e753d34d');
+(\Delight\Http\ResponseHeader::get('X-Dbf97c884f247135', '8c') !== null) or \fail(__LINE__);
+\Delight\Http\ResponseHeader::remove('X-Dbf97c884f247135');
+\header('X-Dbf97c884f247135:		8c7039d7e753d34d');
+(\Delight\Http\ResponseHeader::get('X-Dbf97c884f247135', '8c') !== null) or \fail(__LINE__);
+\Delight\Http\ResponseHeader::remove('X-Dbf97c884f247135');
+\header('X-Dbf97c884f247135:	 8c7039d7e753d34d');
+(\Delight\Http\ResponseHeader::get('X-Dbf97c884f247135', '8c') !== null) or \fail(__LINE__);
+\Delight\Http\ResponseHeader::remove('X-Dbf97c884f247135');
+
 echo 'ALL TESTS PASSED' . "\n";
