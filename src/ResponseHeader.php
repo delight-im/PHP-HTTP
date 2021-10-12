@@ -70,16 +70,7 @@ final class ResponseHeader {
 	 * @param string $valuePrefix the optional string to match at the beginning of the header's value
 	 */
 	public static function remove($name, $valuePrefix = '') {
-		if (empty($valuePrefix)) {
-			\header_remove($name);
-		}
-		else {
-			$found = self::get($name, $valuePrefix);
-
-			if (isset($found)) {
-				\header_remove($name);
-			}
-		}
+		static::take($name, $valuePrefix);
 	}
 
 	/**
