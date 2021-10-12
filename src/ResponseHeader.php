@@ -140,4 +140,26 @@ final class ResponseHeader {
 		return $first;
 	}
 
+	/**
+	 * Returns the value of and removes the header with the specified name (and optional value prefix)
+	 *
+	 * @param string $name the name of the header
+	 * @param string $valuePrefix the optional string to match at the beginning of the header's value
+	 * @return string|null the value of the header (if found) or `null`
+	 */
+	public static function takeValue($name, $valuePrefix = '') {
+		$header = static::take($name, $valuePrefix);
+
+		if (!empty($header)) {
+			$nameLength = \strlen($name);
+			$headerValue = \substr($header, $nameLength + 1);
+			$headerValue = \trim($headerValue, "\t ");
+
+			return $headerValue;
+		}
+		else {
+			return null;
+		}
+	}
+
 }
