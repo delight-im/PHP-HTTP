@@ -148,5 +148,12 @@ function fail($lineNumber) {
 (\Delight\Http\ResponseHeader::take('X-E6f1dda6cd696709', 'cd57') === null) or \fail(__LINE__);
 (\Delight\Http\ResponseHeader::get('X-E6f1dda6cd696709') !== null) or \fail(__LINE__);
 \Delight\Http\ResponseHeader::remove('X-E6f1dda6cd696709');
+\Delight\Http\ResponseHeader::set('X-E6f1dda6cd696709', 'cD571abab1cc4b1b');
+(\Delight\Http\ResponseHeader::take('X-E6f1dda6cd69') === null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('X-E6f1dda6cd696709') !== null) or \fail(__LINE__);
+\Delight\Http\ResponseHeader::remove('X-E6f1dda6cd696709');
+\Delight\Http\ResponseHeader::set('X-E6f1dda6cd696709', 'cD571abab1cc4b1b');
+(\Delight\Http\ResponseHeader::take('X-E6f1dda6cd696709') !== null) or \fail(__LINE__);
+(\Delight\Http\ResponseHeader::get('X-E6f1dda6cd696709') === null) or \fail(__LINE__);
 
 echo 'ALL TESTS PASSED' . "\n";
