@@ -37,4 +37,26 @@ assert(\Delight\Http\ResponseHeader::get('X-Ff4d986c9f5de0b9') === 'X-Ff4d986c9f
 assert(\Delight\Http\ResponseHeader::take('X-Ff4d986c9f5de0b9') === 'X-Ff4d986c9f5de0b9: 846157f7e880442a') or exit;
 assert(\Delight\Http\ResponseHeader::get('X-Ff4d986c9f5de0b9') === null) or exit;
 
+\Delight\Http\ResponseHeader::add('X-C08a89582f64bb96', 'caebdac147484892');
+\Delight\Http\ResponseHeader::add('X-C08a89582f64bb96', 'b0420816e9ec7b71');
+\Delight\Http\ResponseHeader::add('X-C08a89582f64bb96', '96af309d3d39426a');
+assert(\Delight\Http\ResponseHeader::get('X-C08a89582f64bb96') !== null) or exit;
+assert(\Delight\Http\ResponseHeader::take('X-C08a89582f64bb96') !== null) or exit;
+assert(\Delight\Http\ResponseHeader::take('X-C08a89582f64bb96') !== null) or exit;
+assert(\Delight\Http\ResponseHeader::take('X-C08a89582f64bb96') !== null) or exit;
+assert(\Delight\Http\ResponseHeader::take('X-C08a89582f64bb96') === null) or exit;
+assert(\Delight\Http\ResponseHeader::get('X-C08a89582f64bb96') === null) or exit;
+
+\Delight\Http\ResponseHeader::add('X-Ed429f99cf4df084', '190d964f15db158f');
+\Delight\Http\ResponseHeader::add('X-Ed429f99cf4df084', '290d964f15db158f');
+\Delight\Http\ResponseHeader::add('X-Ed429f99cf4df084', '390d964f15db158f');
+assert(\Delight\Http\ResponseHeader::get('X-Ed429f99cf4df084') !== null) or exit;
+assert(\Delight\Http\ResponseHeader::take('X-Ed429f99cf4df084', '2') === 'X-Ed429f99cf4df084: 290d964f15db158f') or exit;
+assert(\Delight\Http\ResponseHeader::take('X-Ed429f99cf4df084', '2') === null) or exit;
+assert(\Delight\Http\ResponseHeader::take('X-Ed429f99cf4df084', '3') === 'X-Ed429f99cf4df084: 390d964f15db158f') or exit;
+assert(\Delight\Http\ResponseHeader::take('X-Ed429f99cf4df084', '3') === null) or exit;
+assert(\Delight\Http\ResponseHeader::take('X-Ed429f99cf4df084', '1') === 'X-Ed429f99cf4df084: 190d964f15db158f') or exit;
+assert(\Delight\Http\ResponseHeader::take('X-Ed429f99cf4df084', '1') === null) or exit;
+assert(\Delight\Http\ResponseHeader::get('X-Ed429f99cf4df084') === null) or exit;
+
 echo 'ALL TESTS PASSED'."\n";
