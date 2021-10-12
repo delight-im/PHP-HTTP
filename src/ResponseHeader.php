@@ -92,7 +92,7 @@ final class ResponseHeader {
 		$homonyms = [];
 
 		foreach ($headers as $header) {
-			if (\strcasecmp(\substr($header, 0, $nameLength), $name) === 0) {
+			if (\strcasecmp(\substr($header, 0, $nameLength + 1), ($name . ':')) === 0) {
 				if ((empty($valuePrefix) || \substr($header, $nameLength + 2, \strlen($valuePrefix)) === $valuePrefix) && $first === null) {
 					$first = $header;
 				}
