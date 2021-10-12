@@ -70,9 +70,10 @@ final class ResponseHeader {
 	 *
 	 * @param string $name the name of the header
 	 * @param string $valuePrefix the optional string to match at the beginning of the header's value
+	 * @return bool whether a header, as specified, has been found and removed
 	 */
 	public static function remove($name, $valuePrefix = '') {
-		static::take($name, $valuePrefix);
+		return static::take($name, $valuePrefix) !== null;
 	}
 
 	/**
