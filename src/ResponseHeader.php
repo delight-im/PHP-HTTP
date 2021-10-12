@@ -42,6 +42,8 @@ final class ResponseHeader {
 	/**
 	 * Sets the header with the specified name and value
 	 *
+	 * If another header with the same name has already been set previously, that header will be overwritten
+	 *
 	 * @param string $name the name of the header
 	 * @param string $value the corresponding value for the header
 	 */
@@ -51,6 +53,8 @@ final class ResponseHeader {
 
 	/**
 	 * Adds the header with the specified name and value
+	 *
+	 * If another header with the same name has already been set previously, both headers (or header values) will be sent
 	 *
 	 * @param string $name the name of the header
 	 * @param string $value the corresponding value for the header
