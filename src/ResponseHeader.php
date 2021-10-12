@@ -86,16 +86,36 @@ final class ResponseHeader {
 	 * @return string|null the header (if found) or `null`
 	 */
 	public static function take($name, $valuePrefix = '') {
-		$found = self::get($name, $valuePrefix);
-
-		if (isset($found)) {
-			header_remove($name);
-
-			return $found;
-		}
-		else {
+		if (empty($name)) {
 			return null;
 		}
+
+		$nameLength = \strlen($name);
+		$headers = \headers_list();
+
+		$first = null;
+		$homonyms = [];
+
+		foreach ($headers as $header) {
+			if (\substr($header, 0, $nameLength) === $name) {
+				if ((empty($valuePrefix) || \substr($header, $nameLength + 2, \strlen($valuePrefix)) === $valuePrefix) && $first === null) {
+					$first = $header;
+				}
+				else {
+					$homonyms[] = $header;
+				}
+			}
+		}
+
+		if ($first !== null) {
+			\header_remove($name);
+
+			foreach ($homonyms as $homonym) {
+				\header($homonym, false);
+			}
+		}
+
+		return $first;
 	}
 
 }
