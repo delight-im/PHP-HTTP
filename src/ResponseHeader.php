@@ -95,7 +95,9 @@ final class ResponseHeader {
 
 		foreach ($headers as $header) {
 			if (\strcasecmp(\substr($header, 0, $nameLength + 1), ($name . ':')) === 0) {
-				if ((empty($valuePrefix) || \substr($header, $nameLength + 2, \strlen($valuePrefix)) === $valuePrefix) && $first === null) {
+				$headerValue = \trim(\substr($header, $nameLength + 1), "\t ");
+
+				if ((empty($valuePrefix) || \substr($headerValue, 0, \strlen($valuePrefix)) === $valuePrefix) && $first === null) {
 					$first = $header;
 				}
 				else {
