@@ -47,9 +47,9 @@ Hypertext Transfer Protocol (HTTP) utilities for PHP
  * Removing a header (with optional value prefix)
 
    ```php
-   \Delight\Http\ResponseHeader::get('X-Powered-By')
+   \Delight\Http\ResponseHeader::remove('X-Powered-By')
    // or
-   \Delight\Http\ResponseHeader::get('X-Powered-By', 'PHP')
+   \Delight\Http\ResponseHeader::remove('X-Powered-By', 'PHP')
    ```
 
  * Retrieving and removing a header at once (with optional value prefix)
